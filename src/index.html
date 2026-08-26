@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>墨七科技 - 陕西墨七数字科技有限公司</title>
+    <meta
+      name="description"
+      content="陕西墨七数字科技有限公司专注于全栈软件开发、UI/UX体验设计、传统企业数字化升级、AI应用落地及独立游戏研发。"
+    />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-hover: #1d4ed8;
+        --text-main: #0f172a;
+        --text-sub: #475569;
+        --bg-light: #f8fafc;
+        --bg-card: #ffffff;
+        --border: #e2e8f0;
+        --max-w: 1140px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        color: var(--text-main);
+        background-color: #ffffff;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* 顶部导航 */
+      header {
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        z-index: 50;
+      }
+      .header-inner {
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--text-main);
+        letter-spacing: -0.5px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .nav-links a {
+        margin-left: 28px;
+        font-size: 0.95rem;
+        color: var(--text-sub);
+        transition: color 0.2s ease;
+      }
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      /* Hero 区域 */
+      .hero {
+        padding: 96px 0 72px;
+        text-align: center;
+        background: radial-gradient(circle at 50% 0%, #eff6ff 0%, #ffffff 70%);
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 14px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--primary);
+        background: #dbeafe;
+        border-radius: 9999px;
+        margin-bottom: 24px;
+        letter-spacing: 0.5px;
+      }
+      .badge-dot {
+        width: 7px;
+        height: 7px;
+        background-color: var(--primary);
+        border-radius: 50%;
+      }
+      .hero h1 {
+        font-size: 2.6rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 18px;
+        letter-spacing: -0.8px;
+        color: var(--text-main);
+      }
+      .hero p {
+        font-size: 1.15rem;
+        color: var(--text-sub);
+        max-width: 720px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      /* 业务板块 (3x2 网格) */
+      .section {
+        padding: 84px 0;
+      }
+      .section-bg {
+        background-color: var(--bg-light);
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 52px;
+      }
+      .section-title h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        letter-spacing: -0.5px;
+      }
+      .section-title p {
+        color: var(--text-sub);
+        font-size: 1rem;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 30px;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.06);
+        border-color: #cbd5e1;
+      }
+      .card-icon {
+        width: 48px;
+        height: 48px;
+        background: #eff6ff;
+        color: var(--primary);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+      }
+      .card h3 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--text-main);
+      }
+      .card p {
+        font-size: 0.925rem;
+        color: var(--text-sub);
+        line-height: 1.65;
+      }
+
+      /* 联系我们 */
+      .contact-card {
+        max-width: 540px;
+        margin: 0 auto;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 36px 28px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      }
+      .contact-item {
+        margin-bottom: 12px;
+        font-size: 1.05rem;
+        color: var(--text-sub);
+      }
+      .contact-item strong {
+        color: var(--text-main);
+      }
+
+      /* 页脚 (严格合规) */
+      footer {
+        background: #0f172a;
+        color: #94a3b8;
+        padding: 44px 0 32px;
+        font-size: 0.875rem;
+        line-height: 1.8;
+        border-top: 1px solid #1e293b;
+      }
+      .footer-content {
+        text-align: center;
+      }
+      .footer-links {
+        margin-top: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+      }
+      .footer-links a {
+        color: #cbd5e1;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+      .police-icon {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+      }
+
+      /* 响应式适配 */
+      @media (max-width: 960px) {
+        .grid-3 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .hero {
+          padding: 64px 0 48px;
+        }
+        .hero h1 {
+          font-size: 1.85rem;
+        }
+        .hero p {
+          font-size: 1rem;
+        }
+        .section {
+          padding: 56px 0;
+        }
+        .nav-links {
+          display: none;
+        }
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+        .footer-links {
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 顶部导航 -->
+    <header>
+      <div class="container header-inner">
+        <div class="logo">墨七科技 · MO7.CC</div>
+        <nav class="nav-links">
+          <a href="#services">核心能力</a>
+          <a href="#contact">联系我们</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero 首屏 -->
+    <section class="hero">
+      <div class="container">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          DESIGN & ENGINEERING LAB
+        </div>
+        <h1>陕西墨七数字科技有限公司</h1>
+        <p>
+          具备“产品设计 × 全栈工程”双重交付能力。专注于现代软件定制、UI/UX
+          体验设计、传统业务数字化升级及独立游戏研发。
+        </p>
+      </div>
+    </section>
+
+    <!-- 6大核心业务板块 (3x2 网格) -->
+    <section id="services" class="section section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>核心业务体系</h2>
+          <p>设计与技术深度融合，提供从原型到上线的端到端交付</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- 业务 1 -->
+          <div class="card">
+            <div class="card-icon">💻</div>
+            <h3>全栈软件定制开发</h3>
+            <p>
+              提供现代 Web 平台、微信小程序、跨端 App
+              及业务后台的高性能架构与编码交付，确保代码规范与长期可维护性。
+            </p>
+          </div>
+
+          <!-- 业务 2：设计能力强化 -->
+          <div class="card">
+            <div class="card-icon">🎨</div>
+            <h3>UI/UX 体验与视觉设计</h3>
+            <p>
+              拒绝粗糙的模板拼凑。提供高水准的产品原型策划、交互逻辑梳理、高保真
+              UI 设计与现代化设计系统（Design System）构建。
+            </p>
+          </div>
+
+          <!-- 业务 3 -->
+          <div class="card">
+            <div class="card-icon">🏢</div>
+            <h3>传统企业数字化升级</h3>
+            <p>
+              针对传统业务痛点，提供流程线上化、内部协同管理与自动化工具开发，帮助企业降低运营成本并提升运转效率。
+            </p>
+          </div>
+
+          <!-- 业务 4 -->
+          <div class="card">
+            <div class="card-icon">🤖</div>
+            <h3>AI 智能化应用落地</h3>
+            <p>
+              协助企业快速接入主流 AI 大模型，定制搭建企业专属私有知识库、自动化
+              Agent 智能体及业务辅助工具。
+            </p>
+          </div>
+
+          <!-- 业务 5 -->
+          <div class="card">
+            <div class="card-icon">🎮</div>
+            <h3>独立游戏与互动内容</h3>
+            <p>
+              专注跨平台 2D/3D
+              游戏玩法原型开发、轻量化游戏研发，以及具备高度视觉冲击与交互趣味性的数字营销创意制作。
+            </p>
+          </div>
+
+          <!-- 业务 6 -->
+          <div class="card">
+            <div class="card-icon">☁️</div>
+            <h3>云架构与运维部署</h3>
+            <p>
+              提供云服务器架构规划、自动化 CI/CD 流水线搭建、第三方支付与系统
+              API 集成，以及数据安全容灾方案。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>联系与咨询</h2>
+          <p>无论是项目外包开发、产品设计定制还是技术方案咨询，欢迎随时联系</p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-item">官方网站：<strong>mo7.cc</strong></div>
+          <div class="contact-item" style="margin-bottom: 0">
+            联系邮箱：<strong>mo7cc@outlook.com</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 页脚（合规备案展示） -->
+    <footer>
+      <div class="container footer-content">
+        <p>© 2026 陕西墨七数字科技有限公司 版权所有</p>
+
+        <div class="footer-links">
+          <!-- 工信部 ICP 备案号严格超链接 -->
+          <a
+            href="https://beian.miit.gov.cn/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            陕ICP备2026022898号-1
+          </a>
+
+          <!-- 公安联网备案（含官方网安警徽 Base64 图标） -->
+          <a
+            href="https://beian.mps.gov.cn/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="police-icon"
+              alt="公安网安备"
+              src="https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png"
+            />
+            陕公网安备 审核中
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
