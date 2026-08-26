@@ -6,12 +6,11 @@
     <title>墨七科技 - 陕西墨七数字科技有限公司</title>
     <meta
       name="description"
-      content="陕西墨七数字科技有限公司专注于全栈软件开发、UI/UX体验设计、传统企业数字化升级、AI应用落地及独立游戏研发。"
+      content="陕西墨七数字科技有限公司专注于Web全栈开发、iOS/Android/HarmonyOS移动端与微信小程序、Avalonia跨平台桌面端、UI/UX设计、AI场景落地及独立游戏研发。"
     />
     <style>
       :root {
         --primary: #2563eb;
-        --primary-hover: #1d4ed8;
         --text-main: #0f172a;
         --text-sub: #475569;
         --bg-light: #f8fafc;
@@ -66,9 +65,6 @@
         font-weight: 700;
         color: var(--text-main);
         letter-spacing: -0.5px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
       }
       .nav-links a {
         margin-left: 28px;
@@ -116,7 +112,7 @@
       .hero p {
         font-size: 1.15rem;
         color: var(--text-sub);
-        max-width: 720px;
+        max-width: 760px;
         margin: 0 auto;
         line-height: 1.7;
       }
@@ -187,7 +183,23 @@
         line-height: 1.65;
       }
 
-      /* 联系我们 */
+      /* 旗下生态标签 */
+      .ecosystem-tags {
+        margin-top: 14px;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .ecosystem-tag {
+        font-size: 0.75rem;
+        font-weight: 600;
+        background: #f1f5f9;
+        color: var(--text-sub);
+        padding: 3px 8px;
+        border-radius: 4px;
+      }
+
+      /* 联系我们卡片 */
       .contact-card {
         max-width: 540px;
         margin: 0 auto;
@@ -207,7 +219,7 @@
         color: var(--text-main);
       }
 
-      /* 页脚 (严格合规) */
+      /* 页脚 (合规展示) */
       footer {
         background: #0f172a;
         color: #94a3b8;
@@ -280,7 +292,7 @@
     <!-- 顶部导航 -->
     <header>
       <div class="container header-inner">
-        <div class="logo">墨七科技 · MO7.CC</div>
+        <div class="logo">墨七科技 · MO7 TECH</div>
         <nav class="nav-links">
           <a href="#services">核心能力</a>
           <a href="#contact">联系我们</a>
@@ -297,8 +309,8 @@
         </div>
         <h1>陕西墨七数字科技有限公司</h1>
         <p>
-          具备“产品设计 × 全栈工程”双重交付能力。专注于现代软件定制、UI/UX
-          体验设计、传统业务数字化升级及独立游戏研发。
+          具备“产品设计 × 全栈工程”双重交付能力。专注于 Web 全栈开发、iOS / Android / HarmonyOS
+          移动端与小程序、Avalonia 跨平台桌面端、AI 落地及独立游戏研发。
         </p>
       </div>
     </section>
@@ -308,67 +320,72 @@
       <div class="container">
         <div class="section-title">
           <h2>核心业务体系</h2>
-          <p>设计与技术深度融合，提供从原型到上线的端到端交付</p>
+          <p>设计与技术深度融合，提供从产品原型到跨端上线的端到端交付</p>
         </div>
 
         <div class="grid-3">
           <!-- 业务 1 -->
           <div class="card">
             <div class="card-icon">💻</div>
-            <h3>全栈软件定制开发</h3>
+            <h3>Web 全栈与企业系统</h3>
             <p>
-              提供现代 Web 平台、微信小程序、跨端 App
-              及业务后台的高性能架构与编码交付，确保代码规范与长期可维护性。
+              基于 ASP.NET Core、Node.js 与现代前端体系，构建高并发业务后台、企业管理中台与响应式
+              Web 应用，确保系统高性能与数据安全。
             </p>
           </div>
 
-          <!-- 业务 2：设计能力强化 -->
+          <!-- 业务 2 -->
           <div class="card">
-            <div class="card-icon">🎨</div>
-            <h3>UI/UX 体验与视觉设计</h3>
+            <div class="card-icon">📱</div>
+            <h3>移动端 App 与小程序</h3>
             <p>
-              拒绝粗糙的模板拼凑。提供高水准的产品原型策划、交互逻辑梳理、高保真 UI
-              设计与现代化设计系统（Design System）构建。
+              提供微信小程序全套开发（支付接入、用户授权、裂变营销），以及覆盖
+              <strong>iOS / Android / HarmonyOS</strong> 的多端与原生移动应用定制。
             </p>
           </div>
 
           <!-- 业务 3 -->
           <div class="card">
-            <div class="card-icon">🏢</div>
-            <h3>传统企业数字化升级</h3>
+            <div class="card-icon">🖥️</div>
+            <h3>跨平台桌面端客户端</h3>
             <p>
-              针对传统业务痛点，提供流程线上化、内部协同管理与自动化工具开发，帮助企业降低运营成本并提升运转效率。
+              依托 .NET 与 Avalonia 框架，打造覆盖 Windows / macOS / Linux
+              的现代桌面生产力工具、系统级管理客户端与专业级业务软件。
             </p>
           </div>
 
           <!-- 业务 4 -->
           <div class="card">
-            <div class="card-icon">🤖</div>
-            <h3>AI 智能化应用落地</h3>
+            <div class="card-icon">🎨</div>
+            <h3>UI/UX 体验与视觉设计</h3>
             <p>
-              协助企业快速接入主流 AI 大模型，定制搭建企业专属私有知识库、自动化 Agent
-              智能体及业务辅助工具。
+              拒绝粗糙的模板拼凑。提供交互逻辑梳理、高保真原型设计与规范化设计系统（Design
+              System），实现真正的高水准产设研一体化。
             </p>
           </div>
 
           <!-- 业务 5 -->
           <div class="card">
-            <div class="card-icon">🎮</div>
-            <h3>独立游戏与互动内容</h3>
+            <div class="card-icon">🤖</div>
+            <h3>AI 智能化场景落地</h3>
             <p>
-              专注跨平台 2D/3D
-              游戏玩法原型开发、轻量化游戏研发，以及具备高度视觉冲击与交互趣味性的数字营销创意制作。
+              帮助企业快速接入主流 AI 大模型，定制搭建企业私有知识库、自动化工作流 Agent
+              及业务辅助工具，实现实质性业务降本增效。
             </p>
           </div>
 
           <!-- 业务 6 -->
           <div class="card">
-            <div class="card-icon">☁️</div>
-            <h3>云架构与运维部署</h3>
+            <div class="card-icon">🎮</div>
+            <h3>独立游戏研发与发行</h3>
             <p>
-              提供云服务器架构规划、自动化 CI/CD 流水线搭建、第三方支付与系统 API
-              集成，以及数据安全容灾方案。
+              具备 Unity / Godot (C#)
+              全流程游戏研发能力。旗下布局休闲治愈与硬核科幻两大独立游戏厂牌，面向全球玩家与社区发行。
             </p>
+            <div class="ecosystem-tags">
+              <span class="ecosystem-tag">🐾 比特喵 BitMeow</span>
+              <span class="ecosystem-tag">⚡ 万物指令 ArrayCmd</span>
+            </div>
           </div>
         </div>
       </div>
@@ -379,11 +396,11 @@
       <div class="container">
         <div class="section-title">
           <h2>联系与咨询</h2>
-          <p>无论是项目外包开发、产品设计定制还是技术方案咨询，欢迎随时联系</p>
+          <p>无论是项目外包定制、全栈产品研发还是独立游戏业务合作，欢迎随时联络</p>
         </div>
 
         <div class="contact-card">
-          <div class="contact-item">官方网站：<strong>mo7.cc</strong></div>
+          <div class="contact-item">官方网站：<strong>mo7tech.com</strong></div>
           <div class="contact-item" style="margin-bottom: 0">
             联系邮箱：<strong>mo7cc@outlook.com</strong>
           </div>
@@ -402,7 +419,7 @@
             陕ICP备2026022898号-1
           </a>
 
-          <!-- 公安联网备案（含官方网安警徽 Base64 图标） -->
+          <!-- 公安联网备案（使用指定外链图标） -->
           <a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener noreferrer">
             <img
               class="police-icon"
