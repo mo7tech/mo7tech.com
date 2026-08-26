@@ -1,0 +1,31 @@
+{
+  "name": "mo7-official-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Official website for Shaanxi Mo7 Digital Technology Co., Ltd.",
+  "author": "Mo7 Tech <mo7cc@outlook.com>",
+  "homepage": "https://mo7.cc",
+  "type": "module",
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=11"
+  },
+  "scripts": {
+    "git-sync": "node script/script_git_sync.js",
+    "re-update": "shx rm -rf ./node_modules ./pnpm-lock.yaml && pnpm update"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@vue/eslint-config-typescript": "^14.9.0",
+    "eslint": "^10.9.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.10.0",
+    "globals": "^17.11.0",
+    "prettier": "^3.9.6",
+    "@prettier/plugin-xml": "^3.4.2",
+    "eta": "^4.6.0",
+    "dayjs": "^1.11.23",
+    "execa": "^10.0.1",
+    "typescript": "^5.9.3"
+  }
+}
