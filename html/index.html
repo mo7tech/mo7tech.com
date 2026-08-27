@@ -3,7 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>墨七科技 - 陕西墨七数字科技有限公司</title>
+    <title>墨七数科 - 陕西墨七数字科技有限公司</title>
+    <!-- 浅色模式下加载黑色图标 -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./favicon.svg"
+      media="(prefers-color-scheme: light)"
+    />
+    <!-- 暗黑模式下加载白色图标 -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./favicon-white.svg"
+      media="(prefers-color-scheme: dark)"
+    />
     <meta
       name="description"
       content="陕西墨七数字科技有限公司专注于Web全栈开发、iOS/Android/HarmonyOS移动端与微信小程序、Avalonia跨平台桌面端、UI/UX设计、AI场景落地及独立游戏研发。"
@@ -65,6 +79,14 @@
         font-weight: 700;
         color: var(--text-main);
         letter-spacing: -0.5px;
+        display: flex;
+        align-items: center;
+      }
+      .logo-svg {
+        width: 1.8rem;
+        /* width: 2rem; */
+        margin-right: 0.4rem;
+        /* margin-left: 0.4rem; */
       }
       .nav-links a {
         margin-left: 28px;
@@ -286,13 +308,24 @@
           gap: 8px;
         }
       }
+      .footer-catbox {
+        position: relative;
+      }
+      .footer-cat {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
     </style>
   </head>
   <body>
     <!-- 顶部导航 -->
     <header>
       <div class="container header-inner">
-        <div class="logo">墨七科技 · MO7 TECH</div>
+        <div class="logo">
+          <img class="logo-svg" src="./favicon.svg" media="(prefers-color-scheme: light)" />
+          墨七数科 · MO7 TECH
+        </div>
         <nav class="nav-links">
           <a href="#services">核心能力</a>
           <a href="#contact">联系我们</a>
@@ -308,6 +341,7 @@
           DESIGN & ENGINEERING LAB
         </div>
         <h1>陕西墨七数字科技有限公司</h1>
+
         <p>
           具备“产品设计 × 全栈工程”双重交付能力。专注于 Web 全栈开发、iOS / Android / HarmonyOS
           移动端与小程序、Avalonia 跨平台桌面端、AI 落地及独立游戏研发。
@@ -407,6 +441,9 @@
         </div>
       </div>
     </section>
+    <div class="footer-catbox">
+      <img class="footer-cat" src="./favicon.svg" media="(prefers-color-scheme: light)" />
+    </div>
 
     <!-- 页脚（合规备案展示） -->
     <footer>
