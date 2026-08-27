@@ -3,6 +3,11 @@
     .icon-shape {
       fill: #3B3B3B;
     }
+    @media (prefers-color-scheme: dark) {
+      .icon-shape {
+        fill: #FFFFFF;
+      }
+    }
   </style>
   <path
     class="icon-shape"
