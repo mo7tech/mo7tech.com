@@ -70,11 +70,13 @@
         display: flex;
         align-items: center;
       }
+      .logo-svg-a {
+        margin-right: 0.4rem;
+        display: inline-block;
+      }
       .logo-svg {
         width: 1.8rem;
-        /* width: 2rem; */
-        margin-right: 0.4rem;
-        /* margin-left: 0.4rem; */
+        display: block;
       }
       .nav-links a {
         margin-left: 28px;
@@ -207,8 +209,23 @@
         color: var(--text-sub);
         padding: 3px 8px;
         border-radius: 4px;
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+      .ecosystem-tag:hover {
+        background: #e2e8f0;
+        transform: scale(1.2);
+        color: var(--text-main);
       }
 
+      .contact-link {
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+
+      .contact-link:hover {
+        transform: scale(1.2);
+      }
       /* 联系我们卡片 */
       .contact-card {
         max-width: 540px;
@@ -312,7 +329,9 @@
     <header>
       <div class="container header-inner">
         <div class="logo">
-          <img class="logo-svg" src="./logo.svg" />
+          <a href="https://mo7tech.com" class="logo-svg-a" target="_blank">
+            <img class="logo-svg" src="./logo.svg" />
+          </a>
           墨七科技 · MO7 TECH
         </div>
         <nav class="nav-links">
@@ -406,8 +425,12 @@
               全流程游戏研发能力。旗下布局休闲治愈与硬核科幻两大独立游戏厂牌，面向全球玩家与社区发行。
             </p>
             <div class="ecosystem-tags">
-              <span class="ecosystem-tag">🐾 比特喵 BitMeow</span>
-              <span class="ecosystem-tag">⚡ 万物指令 ArrayCmd</span>
+              <span class="ecosystem-tag">
+                <a href="https://bitmeow.net" target="_blank"> 🐾 比特喵 BitMeow.net </a>
+              </span>
+              <span class="ecosystem-tag">
+                <a href="https://arraycmd.com" target="_blank"> ⚡ 万物指令 ArrayCmd.com </a>
+              </span>
             </div>
           </div>
         </div>
@@ -423,9 +446,21 @@
         </div>
 
         <div class="contact-card">
-          <div class="contact-item">官方网站：<strong>mo7tech.com</strong></div>
+          <div class="contact-item">
+            官方网站：
+            <a href="https://mo7tech.com" target="_blank" class="contact-link">
+              <strong>mo7tech.com </strong>
+            </a>
+          </div>
           <div class="contact-item" style="margin-bottom: 0">
-            联系邮箱：<strong>hi@mo7tech.com</strong>
+            联系邮箱：
+            <a
+              href="mailto:hi@mo7tech.com?subject=【商务咨询】来自官网的合作意向"
+              target="_blank"
+              class="contact-link"
+            >
+              <strong>hi@mo7tech.com</strong>
+            </a>
           </div>
         </div>
       </div>
@@ -443,7 +478,7 @@
         <div class="footer-links">
           <!-- 工信部 ICP 备案号严格超链接 -->
           <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
-            陕ICP备2026022898号-1
+            陕ICP备2026022898号-2
           </a>
 
           <!-- 公安联网备案（使用指定外链图标） -->
