@@ -3,7 +3,7 @@ import { existsSync } from 'node:fs';
 
 const REMOTE_USER = 'root';
 const REMOTE_HOST = 'guangzhou2c2g.mo7.cc';
-const REMOTE_DIR = '/var/www/mo7.cc/html';
+const REMOTE_DIR = '/var/www/mo7tech.com';
 
 function run(cmd) {
   console.info(`\x1b[36m> ${cmd}\x1b[0m`);
@@ -24,7 +24,7 @@ try {
   // 2. 将本地 ./html 内部所有内容递归推送到远端
   run(`scp -r ./html/. ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}/`);
 
-  console.info('\n\x1b[32m✨ 部署完成！访问: https://mo7.cc\x1b[0m');
+  console.info('\n\x1b[32m✨ 部署完成！访问: https://mo7tech.com\x1b[0m');
 } catch (err) {
   console.error('\n\x1b[31m❌ 部署失败，请检查网络或 SSH 连通性。\x1b[0m');
   process.exit(1);
