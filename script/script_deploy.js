@@ -3,7 +3,7 @@ import { existsSync } from 'node:fs';
 
 const REMOTE_USER = 'root';
 const REMOTE_HOST = 'guangzhou2c2g.mo7.cc';
-const REMOTE_DIR = '/var/www/mo7tech.com';
+const REMOTE_DIR = '/var/www/mo7tech.com/html';
 
 function run(cmd) {
   console.info(`\x1b[36m> ${cmd}\x1b[0m`);
