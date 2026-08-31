@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>墨七科技 · 陕西墨七数字科技有限公司 - Design & Engineering Lab</title>
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta
+      name="description"
+      content="陕西墨七数字科技有限公司专注于Web全栈开发、iOS/Android/HarmonyOS移动端与微信小程序、Avalonia跨平台桌面端、UI/UX设计、AI场景落地及独立游戏研发。"
+    />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-hover: #1d4ed8;
+        --primary-light: #eff6ff;
+        --text-main: #0f172a;
+        --text-sub: #475569;
+        --text-muted: #94a3b8;
+        --bg-page: #f8fafc;
+        --bg-card: #ffffff;
+        --border-color: #e2e8f0;
+        --max-width: 1140px;
+        --radius-lg: 16px;
+        --radius-md: 10px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        color: var(--text-main);
+        background-color: #ffffff;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ================= 顶部导航 ================= */
+      header {
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 100;
+      }
+      .header-inner {
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--text-main);
+        letter-spacing: -0.3px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo-img {
+        width: 32px;
+        height: 32px;
+        display: block;
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .logo:hover .logo-img {
+        transform: rotate(8deg) scale(1.08);
+      }
+      .logo-domain {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--primary);
+        background: var(--primary-light);
+        padding: 2px 8px;
+        border-radius: 6px;
+        margin-left: 4px;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+      .nav-links a {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--text-sub);
+        transition: color 0.2s ease;
+      }
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+      .nav-btn {
+        background: var(--primary);
+        color: #ffffff !important;
+        padding: 8px 18px;
+        border-radius: 9999px;
+        transition: all 0.2s ease;
+      }
+      .nav-btn:hover {
+        background: var(--primary-hover) !important;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+      }
+
+      /* ================= Hero 首屏 ================= */
+      .hero {
+        padding: 90px 0 80px;
+        text-align: center;
+        background: radial-gradient(circle at 50% -20%, #dbeafe 0%, rgba(255, 255, 255, 0) 70%);
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--primary);
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-radius: 9999px;
+        margin-bottom: 24px;
+        letter-spacing: 0.5px;
+      }
+      .badge-dot {
+        width: 6px;
+        height: 6px;
+        background-color: var(--primary);
+        border-radius: 50%;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        line-height: 1.25;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+        color: var(--text-main);
+      }
+      .hero p {
+        font-size: 1.15rem;
+        color: var(--text-sub);
+        max-width: 780px;
+        margin: 0 auto 36px;
+        line-height: 1.75;
+      }
+      .hero-actions {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 26px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        border-radius: var(--radius-md);
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background: var(--primary);
+        color: #ffffff;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+      }
+      .btn-primary:hover {
+        background: var(--primary-hover);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+      }
+      .btn-secondary {
+        background: #ffffff;
+        color: var(--text-main);
+        border: 1px solid var(--border-color);
+      }
+      .btn-secondary:hover {
+        background: var(--bg-page);
+        border-color: #cbd5e1;
+      }
+
+      /* ================= 业务卡片区域 ================= */
+      .section {
+        padding: 90px 0;
+      }
+      .section-bg {
+        background-color: var(--bg-page);
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+      }
+      .section-header {
+        text-align: center;
+        margin-bottom: 56px;
+      }
+      .section-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        letter-spacing: -0.5px;
+      }
+      .section-header p {
+        color: var(--text-sub);
+        font-size: 1.05rem;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: 32px 28px;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08);
+        border-color: #cbd5e1;
+      }
+      .card-icon {
+        width: 52px;
+        height: 52px;
+        background: var(--primary-light);
+        color: var(--primary);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 22px;
+      }
+      .card-icon svg {
+        width: 26px;
+        height: 26px;
+      }
+      .card h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--text-main);
+      }
+      .card p {
+        font-size: 0.95rem;
+        color: var(--text-sub);
+        line-height: 1.7;
+        flex-grow: 1;
+      }
+
+      /* 旗下生态外链标签 */
+      .ecosystem-tags {
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px dashed var(--border-color);
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .ecosystem-tag {
+        font-size: 0.8rem;
+        font-weight: 600;
+        background: #f1f5f9;
+        color: var(--text-sub);
+        padding: 4px 10px;
+        border-radius: 6px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: all 0.2s ease;
+      }
+      .ecosystem-tag:hover {
+        background: #e2e8f0;
+        color: var(--primary);
+        transform: translateY(-1px);
+      }
+
+      /* ================= 联系我们区域 ================= */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        max-width: 880px;
+        margin: 0 auto;
+      }
+      .contact-box {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: 36px 30px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+      }
+      .contact-icon-wrap {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #eff6ff;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+      }
+      .contact-icon-wrap svg {
+        width: 24px;
+        height: 24px;
+      }
+      .contact-box h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .contact-box p {
+        font-size: 0.9rem;
+        color: var(--text-sub);
+        margin-bottom: 20px;
+      }
+      .qr-container {
+        width: 170px;
+        height: 170px;
+        padding: 8px;
+        background: #ffffff;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        margin-bottom: 14px;
+      }
+      .qr-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+      .qr-tip {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      /* 官方门户与邮箱样式组合 */
+      .portal-info {
+        width: 100%;
+        background: var(--bg-page);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        padding: 16px;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+      .portal-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 12px;
+      }
+      .portal-item:last-child {
+        margin-bottom: 0;
+      }
+      .portal-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        letter-spacing: 0.5px;
+      }
+      .portal-value {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--text-main);
+      }
+      .portal-value a {
+        color: var(--primary);
+        transition: color 0.2s ease;
+      }
+      .portal-value a:hover {
+        color: var(--primary-hover);
+        text-decoration: underline;
+      }
+
+      /* ================= 页脚 ================= */
+      footer {
+        background: #0f172a;
+        color: #94a3b8;
+        padding: 48px 0 36px;
+        font-size: 0.875rem;
+        border-top: 1px solid #1e293b;
+      }
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        text-align: center;
+      }
+      .footer-copyright {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+      }
+      .footer-domain {
+        color: #60a5fa;
+        font-weight: 600;
+      }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      .footer-links a {
+        color: #cbd5e1;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: #ffffff;
+      }
+      .police-icon {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+      }
+
+      /* ================= 响应式适配 ================= */
+      @media (max-width: 960px) {
+        .grid-3 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 720px) {
+        .hero {
+          padding: 60px 0 50px;
+        }
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .hero p {
+          font-size: 1rem;
+        }
+        .section {
+          padding: 60px 0;
+        }
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .logo-domain {
+          display: none;
+        }
+        .nav-links a:not(.nav-btn) {
+          display: none;
+        }
+        .footer-links {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 顶部导航 -->
+    <header>
+      <div class="container header-inner">
+        <a href="https://mo7tech.com" class="logo">
+          <img class="logo-img" src="./logo.svg" alt="墨七科技 Logo" />
+          <span>墨七科技 · MO7 TECH</span>
+          <span class="logo-domain">mo7tech.com</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#services">核心业务</a>
+          <a href="#contact" class="nav-btn">商务咨询</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero 首屏 -->
+    <section class="hero">
+      <div class="container">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          DESIGN &amp; ENGINEERING LAB
+        </div>
+        <h1>陕西墨七数字科技有限公司</h1>
+        <p>
+          具备“产品设计 × 全栈工程”双重交付能力。专注于 Web 高性能全栈系统、iOS / Android /
+          HarmonyOS 移动应用、Avalonia 跨平台桌面端、企业级 AI 场景落地与独立游戏研发。
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">立即对接需求</a>
+          <a href="#services" class="btn btn-secondary">浏览核心能力</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6大核心业务板块 -->
+    <section id="services" class="section section-bg">
+      <div class="container">
+        <div class="section-header">
+          <h2>核心业务体系</h2>
+          <p>设计与技术深度融合，提供从产品原型到全端上线的端到端交付</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- 业务 1 -->
+          <div class="card">
+            <div class="card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3>Web 全栈与企业中台</h3>
+            <p>
+              基于 ASP.NET Core、Node.js 与现代前端体系，构建高并发业务系统、微服务架构与响应式 Web
+              应用，确保系统高吞吐与企业级数据安全。
+            </p>
+          </div>
+
+          <!-- 业务 2 -->
+          <div class="card">
+            <div class="card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </div>
+            <h3>移动端 App 与小程序</h3>
+            <p>
+              提供微信小程序全套开发（微信支付接入、用户授权、裂变营销），以及覆盖
+              <strong>iOS / Android / HarmonyOS</strong> 的多端与原生移动应用定制开发。
+            </p>
+          </div>
+
+          <!-- 业务 3 -->
+          <div class="card">
+            <div class="card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="M10 4v4"></path>
+                <path d="M2 8h20"></path>
+                <path d="M6 4v4"></path>
+              </svg>
+            </div>
+            <h3>跨平台桌面端客户端</h3>
+            <p>
+              依托 .NET 与 Avalonia 现代框架，打造无缝覆盖
+              <strong>Windows / macOS / Linux</strong>
+              的跨平台生产力工具、系统级管理客户端与专业级业务软件。
+            </p>
+          </div>
+
+          <!-- 业务 4 -->
+          <div class="card">
+            <div class="card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                <path d="M2 2l7.586 7.586"></path>
+                <circle cx="11" cy="11" r="2"></circle>
+              </svg>
+            </div>
+            <h3>UI/UX 体验与视觉设计</h3>
+            <p>
+              拒绝粗糙模板拼凑。提供深度交互逻辑梳理、高保真原型输出与严谨的设计系统（Design
+              System），实现高水准的“产·设·研”一体化交付。
+            </p>
+          </div>
+
+          <!-- 业务 5 -->
+          <div class="card">
+            <div class="card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path>
+                <rect x="4" y="8" width="16" height="12" rx="2"></rect>
+                <line x1="8" y1="12" x2="8" y2="12.01"></line>
+                <line x1="16" y1="12" x2="16" y2="12.01"></line>
+              </svg>
+            </div>
+            <h3>企业 AI 智能化场景落地</h3>
+            <p>
+              帮助企业快速接入主流大语言模型，定制搭建企业私有知识库（RAG）、自动化工作流 Agent
+              及业务辅助工具，实现实质性的降本增效。
+            </p>
+          </div>
+
+          <!-- 业务 6 -->
+          <div class="card">
+            <div class="card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon points="6 3 18 3 15 21 9 21 6 3"></polygon>
+                <line x1="6" y1="8" x2="18" y2="8"></line>
+              </svg>
+            </div>
+            <h3>独立游戏研发与发行</h3>
+            <p>
+              具备 Unity / Godot (C#)
+              全流程研发能力。旗下布局休闲治愈与硬核科幻两大独立游戏厂牌，面向全球社区玩家发行。
+            </p>
+            <div class="ecosystem-tags">
+              <a href="https://bitmeow.net" target="_blank" class="ecosystem-tag"
+                >🐾 比特喵 BitMeow.net</a
+              >
+              <a href="https://arraycmd.com" target="_blank" class="ecosystem-tag"
+                >⚡ 万物指令 ArrayCmd.com</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系与咨询（双通道转化） -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>商务对接与咨询</h2>
+          <p>无论是企业级定制开发、全栈产品交付还是游戏业务合作，欢迎随时联络</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- 渠道 1: 官方企业微信 -->
+          <div class="contact-box">
+            <div class="contact-icon-wrap">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                ></path>
+              </svg>
+            </div>
+            <h3>企业微信咨询</h3>
+            <p>扫码直接添加对接人，直接开始沟通</p>
+            <div class="qr-container">
+              <!-- <img class="qr-img" src="./contact_me_qr.png" alt="企业微信二维码" /> -->
+              <img class="qr-img" src="./contact_me_qr_logo.png" alt="企业微信二维码" />
+            </div>
+            <span class="qr-tip">微信 / 企业微信 扫一扫均可直接沟通</span>
+          </div>
+
+          <!-- 渠道 2: 官方商务邮箱与门户 -->
+          <div class="contact-box">
+            <div class="contact-icon-wrap">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <h3>商务联络通道</h3>
+            <p>官方直达通道，用于发送资料与正式合作邮件</p>
+
+            <div class="portal-info">
+              <div class="portal-item">
+                <span class="portal-label">Official Portal / 官方主站</span>
+                <span class="portal-value">
+                  <a href="https://mo7tech.com" target="_blank">mo7tech.com</a>
+                </span>
+              </div>
+              <div class="portal-item">
+                <span class="portal-label">Business Email / 商务邮箱</span>
+                <span class="portal-value">
+                  <a href="mailto:hi@mo7tech.com?subject=【商务咨询】来自官网的合作意向"
+                    >hi@mo7tech.com</a
+                  >
+                </span>
+              </div>
+            </div>
+
+            <a
+              href="mailto:hi@mo7tech.com?subject=【商务咨询】来自官网的合作意向"
+              class="btn btn-primary"
+              style="width: 100%; max-width: 240px"
+            >
+              发送合作邮件
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 页脚合规展示 -->
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-copyright">
+          <span>© 2026 陕西墨七数字科技有限公司 版权所有</span>
+          <span class="footer-domain">( mo7tech.com )</span>
+        </div>
+
+        <div class="footer-links">
+          <!-- 工信部备案号（Nginx sub_filter 自动替换） -->
+          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+            __ICP_NUM__
+          </a>
+
+          <!-- 公安联网备案 -->
+          <a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener noreferrer">
+            <img
+              class="police-icon"
+              alt="公安网安备"
+              src="//beian.mps.gov.cn/web/assets/logo01.6189a29f.png"
+            />
+            陕公网安备 审核中
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
